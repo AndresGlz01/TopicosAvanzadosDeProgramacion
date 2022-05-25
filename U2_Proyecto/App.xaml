@@ -1,0 +1,33 @@
+﻿<Application x:Class="U2_Proyecto.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:U2_Proyecto"
+             StartupUri="View/PiezaView.xaml">
+    <Application.Resources>
+        
+        <!-- Botones -->
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="Foreground" Value="#f4f4f4"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="https://www.wallpaperbetter.com/wallpaper/970/198/369/wood-texture-2K-wallpaper.jpg" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- Lista -->
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="#f4f4f4"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="https://image.freepik.com/foto-gratis/abstracto-blanco-color-lienzo-fondos-pantalla-texturas-superficie_74190-6376.jpg"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

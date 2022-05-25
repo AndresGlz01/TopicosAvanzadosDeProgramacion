@@ -1,0 +1,44 @@
+﻿<Window x:Class="Peliculas.Views.PeliculasView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Peliculas.Views"
+        mc:Ignorable="d"
+        Title="PeliculasView" Height="450" Width="800">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Left" >
+            <Button DockPanel.Dock="Bottom" Content="Agregar pelicula" Padding="5"/>
+            <ListBox MaxWidth="300">
+            <StackPanel MaxWidth="70">
+                <Image Width="70"
+                    Source="https://cinergetica.com.mx/wp-content/uploads/2012/12/duro-matar-5-buen-dia-morir-poster.jpg"/>
+                <Label Content="Duro de matar 2"/>
+            </StackPanel>
+                <StackPanel MaxWidth="70">
+                <Image Width="70"
+                    Source="https://m.media-amazon.com/images/I/51JCZ7rcDNL._AC_.jpg"/>
+                <Label Content="Halo: Nightfall"/>
+            </StackPanel>
+                <StackPanel MaxWidth="70">
+                <Image Width="70"
+                    Source="https://pics.filmaffinity.com/moonfall-138176660-large.jpg"/>
+                    <Label Content="Moonfall"/>
+            </StackPanel>
+                <StackPanel MaxWidth="70">
+                <Image Width="70"
+                    Source="https://pics.filmaffinity.com/mortal_kombat-245960455-large.jpg"/>
+                <Label Content="Mortal Kombat"/>
+            </StackPanel>
+            <StackPanel>
+                <Image Width="70"
+                    Source="https://images-na.ssl-images-amazon.com/images/I/91napY3-NLL._RI_.jpg"/>
+                <Label Content="Sing"/>
+            </StackPanel>
+        </ListBox>
+        </DockPanel>
+        <ContentControl>
+            
+        </ContentControl>
+    </DockPanel>
+</Window>

@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="ListaDeCompras.Views.ModificarProductoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ListaDeCompras.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="#70000000"
+    mc:Ignorable="d">
+    <Border
+        Margin="50"
+        Padding="20"
+        Background="White">
+        <StackPanel Margin="10">
+            <TextBlock Margin="10" FontSize="25">Modificar un producto</TextBlock>
+            <Label Content="Cantidad del producto:" />
+            <TextBox Text="{Binding MiProducto.Cantidad}"/>
+            <Label Content="Nombre del producto:" />
+            <TextBox Text="{Binding MiProducto.Descripcion}"/>
+            <WrapPanel Margin="10" HorizontalAlignment="Center">
+                <Button
+                    Margin="5"
+                    Padding="30,10"
+                    Content="Modificar" Command="{Binding ModificarCommand}" />
+                <Button
+                    Margin="5"
+                    Padding="30,10"
+                    Command="{Binding CancelarCommand}"
+                    Content="Cancelar" />
+            </WrapPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="Estilos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Estilos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="500">
+    <DockPanel Margin="10">
+        <DockPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="#7C87BB"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="FontSize" Value="15px"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="5,0"/>
+                <Setter Property="Padding" Value="10, 5"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </DockPanel.Resources>
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock>Esta ubicación ya contiene un archivo con el mismo nombre.</TextBlock>
+            <TextBlock Foreground="Black">Haga click en el archivo que desea conservar</TextBlock>
+        </StackPanel>
+        <WrapPanel DockPanel.Dock="Bottom" Background="#f4f4f4">
+            <CheckBox>Realizar esta acción para todos los conflictos.</CheckBox>
+            <Button>Omitir</Button>
+            <Button>Cancelar</Button>
+        </WrapPanel>
+        
+        <UniformGrid Rows="3">
+            <StackPanel Margin="10">
+                <TextBlock FontWeight="Bold">Copiar y remplazar</TextBlock>
+                <TextBlock>Remplaza el archivo en la carpeta de destino con el archivo que está copiando:</TextBlock>
+                <StackPanel Margin="40, 10">
+                    <Label FontWeight="Bold" FontSize="15">Documento Excel.xlsx</Label>
+                    <Label Foreground="#7C87BB">Documento Excel (D:/Mi Equipo/Escritorio)</Label>
+                    <Label>Tamaño: 9.54 kb</Label>
+                    <Label>Fecha de modificación: 05/11/2011 08:10 pm</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock FontWeight="Bold">No copiar</TextBlock>
+                <TextBlock>No se cambiará ningún archivo. Conservar este archivo en la carpeta de destino:</TextBlock>
+                <StackPanel Margin="40, 10">
+                    <Label FontWeight="Bold" FontSize="15">Documento Excel.xlsx</Label>
+                    <Label Foreground="#7C87BB">Documento Excel (D:/Mi Equipo/Escritorio)</Label>
+                    <Label>Tamaño: 9.54 kb</Label>
+                    <Label>Fecha de modificación: 05/11/2011 08:10 pm</Label>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock FontWeight="Bold">Copiar pero conservar ambos archivos</TextBlock>
+                <TextBlock>El nombre dela rchivo que está copiando se cambiará a "Documento Excel(2).xlsx"</TextBlock>
+
+            </StackPanel>
+        </UniformGrid>
+    </DockPanel>
+</Window>

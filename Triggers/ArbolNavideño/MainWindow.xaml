@@ -1,0 +1,98 @@
+﻿<Window
+    x:Class="ArbolNavideño.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ArbolNavideño"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Compra de arbol navideño"
+    Width="800"
+    Height="450"
+    Background="#D4C06A"
+    mc:Ignorable="d">
+    <DockPanel Margin="30">
+        <DockPanel.Resources>
+            <Style TargetType="Image">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=Color, Path=SelectedItem.Content}" Value="Verde">
+                        <Setter Property="Source" Value="img/tree-green.jpg" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding ElementName=Color, Path=SelectedItem.Content}" Value="Blanco">
+                        <Setter Property="Source" Value="img/tree-white.jpg" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding ElementName=Color, Path=SelectedItem.Content}" Value="Rojo">
+                        <Setter Property="Source" Value="img/tree-red.jpg" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="FontSize" Value="20px" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Padding" Value="10px" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15px" />
+                <Setter Property="TextWrapping" Value="Wrap" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="17px" />
+                <Setter Property="Foreground" Value="Gray" />
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Padding" Value="6px" />
+                <Setter Property="Margin" Value="0,0,20,0" />
+            </Style>
+        </DockPanel.Resources>
+        <UniformGrid Columns="2" DockPanel.Dock="Bottom">
+            <Button Background="#7386A7" Content="Comprar ahora" />
+            <Button Background="#9273A9" Content="Agregar al carrito" />
+        </UniformGrid>
+        <UniformGrid Background="White" Columns="2">
+            <Image />
+            <StackPanel>
+                <TextBlock
+                    Margin="0,10,0,0"
+                    FontWeight="Bold"
+                    Text="Arbol de navidad clásico" />
+                <TextBlock Foreground="Gray" Text="Sin decoración" />
+                <Label>
+                    <Label.Style>
+                        <Style TargetType="Label">
+                            <Setter Property="FontSize" Value="20px" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=Tamaño, Path=SelectedItem.Content}" Value="Pequeño">
+                                    <Setter Property="Content" Value="$150" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=Tamaño, Path=SelectedItem.Content}" Value="Mediano">
+                                    <Setter Property="Content" Value="$300" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=Tamaño, Path=SelectedItem.Content}" Value="Grande">
+                                    <Setter Property="Content" Value="$450" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Label.Style>
+                </Label>
+                <TextBlock
+                    Padding="0,0,20,0"
+                    Text="Luce tus decoraciones de Navidad con este clasico arbol de navidad. Viene en colores Verde, Blanco (nevado) o Rojizo y en tres tipos de tamaño a elegir."
+                    TextAlignment="Justify" />
+                <Label Content="Tamaño:" />
+                <ComboBox Name="Tamaño">
+                    <ComboBoxItem Content="Pequeño" />
+                    <ComboBoxItem Content="Mediano" IsSelected="True" />
+                    <ComboBoxItem Content="Grande" />
+                </ComboBox>
+                <Label Content="Color:" />
+                <ComboBox Name="Color">
+                    <ComboBoxItem Content="Verde" IsSelected="True" />
+                    <ComboBoxItem Content="Blanco" />
+                    <ComboBoxItem Content="Rojo" />
+                </ComboBox>
+            </StackPanel>
+        </UniformGrid>
+    </DockPanel>
+</Window>

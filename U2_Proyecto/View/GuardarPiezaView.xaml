@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="U2_Proyecto.View.GuardarPiezaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:U2_Proyecto.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#b5333333">
+    <Border Margin="30">
+        <DockPanel Background="#f4f4f4">
+            <UniformGrid Columns="2" DockPanel.Dock="Bottom">
+                <Button Content="Cancelar" Command="{Binding CancelarCommand}"/>
+                <Button Content="Confirmar">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="FontFamily" Value="Verdana"/>
+                            <Setter Property="Foreground" Value="#f4f4f4"/>
+                            <Setter Property="FontSize" Value="25"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="https://www.wallpaperbetter.com/wallpaper/970/198/369/wood-texture-2K-wallpaper.jpg" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Command" Value="{Binding AgregarCommand}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding View}" Value="ModificarPieza">
+                                    <Setter Property="Command" Value="{Binding ModificarCommand}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </UniformGrid>
+            <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="DockPanel">
+                        <Setter Property="Margin" Value="10"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Guardar Pieza" FontSize="25" Margin="10" HorizontalAlignment="Center" Foreground="#8E3200"/>
+                <DockPanel>
+                    <Label Content="Título:" Width="150" HorizontalContentAlignment="Center"/>
+                    <TextBox Text="{Binding Pieza.Titulo}"/>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Tipo:" Width="150" HorizontalContentAlignment="Center"/>
+                    <ComboBox Text="{Binding Pieza.Tipo}">
+                        <ComboBoxItem Content="Pintura"/>
+                        <ComboBoxItem Content="Libro"/>
+                        <ComboBoxItem Content="Escultura"/>
+                        <ComboBoxItem Content="Poema"/>
+                    </ComboBox>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Fotografía (URL):" Width="150" HorizontalContentAlignment="Center"/>
+                    <TextBox Text="{Binding Pieza.Imagen}"/>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Descripción:" Width="150" HorizontalContentAlignment="Center"/>
+                    <TextBox Text="{Binding Pieza.Descripcion}" AcceptsReturn="True" TextWrapping="Wrap" Height="50"/>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Fecha de creación:" Width="150" HorizontalContentAlignment="Center"/>
+                    <DatePicker Text="{Binding Pieza.FechaCreacion, Mode=TwoWay}"/>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Artista:" Width="150" HorizontalContentAlignment="Center"/>
+                    <ComboBox SelectedItem="{Binding Pieza.Artista, Mode=TwoWay}" ItemsSource="{Binding Artistas}" DisplayMemberPath="Nombre"/>
+                </DockPanel>
+            </StackPanel>
+        </DockPanel>
+    </Border>
+</UserControl>

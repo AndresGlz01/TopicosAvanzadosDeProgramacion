@@ -1,0 +1,126 @@
+﻿<UserControl
+    x:Class="U1_Actividad_5.views.TableroDeportivo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:U1_Actividad_5.views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Background="#333">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="TextAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="10px" />
+                <Setter Property="FontSize" Value="20px" />
+                <Setter Property="Foreground" Value="LightBlue" />
+                <Setter Property="Background" Value="#444" />
+                <Setter Property="Padding" Value="0,30,0,30" />
+                <Setter Property="FontFamily" Value="fonts/#digital-7" />
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="PLAYERS" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            Foreground="LightGreen"
+            Text="PLAYER A" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            Foreground="LightGreen"
+            Text="PLAYER B" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="SET 1" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="2"
+            FontSize="70"
+            Foreground="Violet"
+            Text="3" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="2"
+            FontSize="70"
+            Foreground="Violet"
+            Text="6" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="3"
+            Text="SET 2" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="3"
+            FontSize="70"
+            Foreground="Violet"
+            Text="6" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="3"
+            FontSize="70"
+            Foreground="Violet"
+            Text="4" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="4"
+            Text="SET 3" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="4"
+            FontSize="70"
+            Foreground="Violet"
+            Text="4" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="4"
+            FontSize="70"
+            Foreground="Violet"
+            Text="4" />
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="5"
+            Text="SCORE" />
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="5"
+            FontSize="70"
+            Foreground="LightGreen"
+            Text="15" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="5"
+            FontSize="70"
+            Foreground="LightGreen"
+            Text="30" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using U2_Proyecto.ViewModel;
+
+namespace U2_Proyecto.View
+{
+    /// <summary>
+    /// Lógica de interacción para DetallePiezaView.xaml
+    /// </summary>
+    public partial class DetallePiezaView : UserControl
+    {
+        public DetallePiezaView()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (MessageBox.Show("¿Está seguro de eliminar?", "ELIMINAR",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var viewModel = (PiezaViewModel)DataContext;
+                viewModel.EliminarCommand.Execute(null);                
+            }
+        }
+    }
+}

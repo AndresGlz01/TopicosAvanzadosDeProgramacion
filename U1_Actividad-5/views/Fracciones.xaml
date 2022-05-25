@@ -1,0 +1,106 @@
+﻿<UserControl
+    x:Class="U1_Actividad_5.views.Fracciones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:U1_Actividad_5.views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:U1_Actividad_5.viewmodels"
+    Name="userControl"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewmodels:Fracciones />
+    </UserControl.DataContext>
+    <UserControl.Background>
+        <ImageBrush ImageSource="/assets/images/notebook.jpg" />
+    </UserControl.Background>
+    <DockPanel Margin="200,60">
+        <Button
+            Padding="0,7"
+            Background="#5271FF"
+            BorderThickness="0"
+            Content="CALCULAR"
+            Cursor="Hand"
+            DockPanel.Dock="Bottom"
+            FontFamily="Code Pro"
+            FontSize="15"
+            Foreground="White">
+            <Button.Resources>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedIndex, ElementName=Operador}" Value="0">
+                            <Setter Property="Command" Value="{Binding SumarCommand}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedIndex, ElementName=Operador}" Value="1">
+                            <Setter Property="Command" Value="{Binding RestarCommand}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedIndex, ElementName=Operador}" Value="2">
+                            <Setter Property="Command" Value="{Binding MultiplicarCommand}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SelectedIndex, ElementName=Operador}" Value="3">
+                            <Setter Property="Command" Value="{Binding DividirCommand}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Padding" Value="20" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="Width" Value="100px" />
+                    <Setter Property="MaxLength" Value="5" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Margin" Value="0,20" />
+                    <Setter Property="Background" Value="#38B6FF" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Text" Value="0" />
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="FontFamily" Value="Code Pro" />
+                </Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40" />
+                    <Setter Property="Background" Value="Transparent" />
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel VerticalAlignment="Center">
+                <TextBox Text="{Binding Operando1[0]}" />
+                <Image Height="15" Source="/assets/images/bar.png" />
+                <TextBox Text="{Binding Operando1[1]}" />
+            </StackPanel>
+            <ComboBox Name="Operador" VerticalAlignment="Center">
+                <ComboBoxItem IsSelected="True">+</ComboBoxItem>
+                <ComboBoxItem>-</ComboBoxItem>
+                <ComboBoxItem>*</ComboBoxItem>
+                <ComboBoxItem>/</ComboBoxItem>
+            </ComboBox>
+            <StackPanel VerticalAlignment="Center">
+                <TextBox Text="{Binding Operando2[0]}" />
+                <Image Height="15" Source="/assets/images/bar.png" />
+                <TextBox Text="{Binding Operando2[1]}" />
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center" Text="=" />
+            <StackPanel VerticalAlignment="Center">
+                <TextBox
+                    Background="#5271FF"
+                    IsEnabled="False"
+                    Text="{Binding Resultado[0]}" />
+                <Image Height="15" Source="/assets/images/bar.png" />
+                <TextBox
+                    Background="#5271FF"
+                    IsEnabled="False"
+                    Text="{Binding Resultado[1]}" />
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</UserControl>
